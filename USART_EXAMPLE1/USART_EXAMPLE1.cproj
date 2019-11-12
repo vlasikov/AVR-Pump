@@ -5,7 +5,7 @@
     <ProjectVersion>7.0</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
     <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
-    <avrdevice>ATxmega256A3U</avrdevice>
+    <avrdevice>ATxmega128A3U</avrdevice>
     <avrdeviceseries>xmegaau</avrdeviceseries>
     <OutputType>Executable</OutputType>
     <Language>C</Language>
@@ -20,10 +20,10 @@
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
     <ProgFlashFromRam>true</ProgFlashFromRam>
-    <RamSnippetAddress />
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
     <UncachedRange />
     <preserveEEPROM>true</preserveEEPROM>
-    <OverrideVtorValue />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
     <ResetRule>0</ResetRule>
     <eraseonlaunchrule>0</eraseonlaunchrule>
@@ -94,11 +94,12 @@
   <board id="board.stk600-rc064x.atxmega256a3u" value="Add" config="" content-id="Atmel.ASF" />
 </framework-data>
     </AsfFrameworkConfig>
+    <avrtool />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.Device>-mmcu=atxmega256a3u -B "%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega256a3u"</avrgcc.common.Device>
+  <avrgcc.common.Device>-mmcu=atxmega128a3u -B "%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega128a3u"</avrgcc.common.Device>
   <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
   <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
   <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
@@ -114,7 +115,6 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\include</Value>
       <Value>../src/ASF/common/services/gpio</Value>
       <Value>../src/ASF/common/services/ioport</Value>
       <Value>../src/ASF/xmega/utils/preprocessor</Value>
@@ -130,6 +130,7 @@
       <Value>../src/ASF/xmega/boards</Value>
       <Value>../src</Value>
       <Value>../src/config</Value>
+      <Value>%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\include</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -147,7 +148,6 @@
   <avrgcc.assembler.general.AssemblerFlags>-mrelax -DBOARD=STK600_RC064X -DCONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA -DIOPORT_XMEGA_COMPAT</avrgcc.assembler.general.AssemblerFlags>
   <avrgcc.assembler.general.IncludePaths>
     <ListValues>
-      <Value>%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\include</Value>
       <Value>../src/ASF/common/services/gpio</Value>
       <Value>../src/ASF/common/services/ioport</Value>
       <Value>../src/ASF/xmega/utils/preprocessor</Value>
@@ -163,6 +163,7 @@
       <Value>../src/ASF/xmega/boards</Value>
       <Value>../src</Value>
       <Value>../src/config</Value>
+      <Value>%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\include</Value>
     </ListValues>
   </avrgcc.assembler.general.IncludePaths>
 </AvrGcc>
@@ -171,7 +172,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.Device>-mmcu=atxmega256a3u -B "%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega256a3u"</avrgcc.common.Device>
+  <avrgcc.common.Device>-mmcu=atxmega128a3u -B "%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega128a3u"</avrgcc.common.Device>
   <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
   <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
   <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
@@ -187,7 +188,6 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\include</Value>
       <Value>../src/ASF/common/services/gpio</Value>
       <Value>../src/ASF/common/services/ioport</Value>
       <Value>../src/ASF/xmega/utils/preprocessor</Value>
@@ -203,6 +203,7 @@
       <Value>../src/ASF/xmega/boards</Value>
       <Value>../src</Value>
       <Value>../src/config</Value>
+      <Value>%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\include</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -221,7 +222,6 @@
   <avrgcc.assembler.general.AssemblerFlags>-mrelax -DBOARD=STK600_RC064X -DCONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA -DIOPORT_XMEGA_COMPAT</avrgcc.assembler.general.AssemblerFlags>
   <avrgcc.assembler.general.IncludePaths>
     <ListValues>
-      <Value>%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\include</Value>
       <Value>../src/ASF/common/services/gpio</Value>
       <Value>../src/ASF/common/services/ioport</Value>
       <Value>../src/ASF/xmega/utils/preprocessor</Value>
@@ -237,6 +237,7 @@
       <Value>../src/ASF/xmega/boards</Value>
       <Value>../src</Value>
       <Value>../src/config</Value>
+      <Value>%24(PackRepoDir)\atmel\XMEGAA_DFP\1.1.68\include</Value>
     </ListValues>
   </avrgcc.assembler.general.IncludePaths>
   <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
