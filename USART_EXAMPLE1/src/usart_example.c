@@ -109,9 +109,11 @@ int main(void)
 	// Initialize usart driver in RS232 mode
 	usart_init_rs232(USART_SERIAL_EXAMPLE, &USART_SERIAL_OPTIONS);
 
-	// Send "message header"
-	for (i = 0; i < tx_length; i++) {
-		usart_putchar(USART_SERIAL_EXAMPLE, tx_buf[i]);
+	while (true) {
+		// Send "message header"
+		for (i = 0; i < tx_length; i++) {
+			usart_putchar(USART_SERIAL_EXAMPLE, tx_buf[i]);
+		}
 	}
 	// Get and echo a character forever, specific '\r' processing.
 	while (true) {
